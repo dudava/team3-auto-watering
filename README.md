@@ -9,3 +9,5 @@
 - включение реле при недостаточной влажности
 ## Ссылка на проект wokwi
 https://wokwi.com/projects/334512724199342674
+## Ссылка на доску
+https://github.com/users/dudava/projects/1
