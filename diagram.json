@@ -12,18 +12,20 @@
       "rotate": 270,
       "attrs": { "env": "micropython-20220618-v1.19.1" }
     },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -126.1, "left": -96.2, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -126.1, "left": 57.4, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -90, "left": 243.8, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": -90, "left": 291.8, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led3", "top": -90, "left": 195.8, "attrs": { "color": "red" } },
     {
-      "type": "wokwi-buzzer",
-      "id": "bz1",
-      "top": 31.2,
-      "left": 117,
-      "attrs": { "volume": "0.1" }
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 25.4,
+      "left": 336,
+      "attrs": { "color": "green", "xray": "1" }
     }
   ],
   "connections": [
-    [ "bb1:3b.j", "bb1:bn.2", "black", [ "v0" ] ],
-    [ "bb1:25b.h", "bb1:bn.20", "black", [ "v0" ] ],
-    [ "bb1:26b.j", "bb1:20b.j", "green", [ "v0" ] ],
     [ "pico:GP0", "bb1:1b.h", "", [ "$bb" ] ],
     [ "pico:GP1", "bb1:2b.h", "", [ "$bb" ] ],
     [ "pico:GND.1", "bb1:3b.h", "", [ "$bb" ] ],
@@ -64,8 +66,20 @@
     [ "pico:GND.8", "bb1:3t.c", "", [ "$bb" ] ],
     [ "pico:VSYS", "bb1:2t.c", "", [ "$bb" ] ],
     [ "pico:VBUS", "bb1:1t.c", "", [ "$bb" ] ],
-    [ "bz1:1", "bb1:25b.f", "", [ "$bb" ] ],
-    [ "bz1:2", "bb1:26b.f", "", [ "$bb" ] ]
+    [ "pico:GP26", "pot1:SIG", "green", [ "v0" ] ],
+    [ "pico:GP27", "pot2:SIG", "green", [ "v0" ] ],
+    [ "pot2:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot2:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "pot1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "led1:A", "pico:GP14", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "led2:A", "pico:GP15", "green", [ "v0" ] ],
+    [ "led2:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "led3:A", "pico:GP16", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "btn1:1.l", "pico:GP17", "green", [ "h0" ] ],
+    [ "btn1:2.r", "pico:GND.5", "green", [ "h0" ] ]
   ],
   "dependencies": {}
 }
