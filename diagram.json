@@ -26,6 +26,20 @@
     }
   ],
   "connections": [
+    [ "pico:GP26", "pot1:SIG", "green", [ "v0" ] ],
+    [ "pico:GP27", "pot2:SIG", "green", [ "v0" ] ],
+    [ "pot2:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot2:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "pot1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "led1:A", "pico:GP14", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "led2:A", "pico:GP15", "green", [ "v0" ] ],
+    [ "led2:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "led3:A", "pico:GP16", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "btn1:1.l", "pico:GP17", "green", [ "h0" ] ],
+    [ "btn1:2.r", "pico:GND.5", "green", [ "h0" ] ],
     [ "pico:GP0", "bb1:1b.h", "", [ "$bb" ] ],
     [ "pico:GP1", "bb1:2b.h", "", [ "$bb" ] ],
     [ "pico:GND.1", "bb1:3b.h", "", [ "$bb" ] ],
@@ -65,21 +79,7 @@
     [ "pico:3V3_EN", "bb1:4t.c", "", [ "$bb" ] ],
     [ "pico:GND.8", "bb1:3t.c", "", [ "$bb" ] ],
     [ "pico:VSYS", "bb1:2t.c", "", [ "$bb" ] ],
-    [ "pico:VBUS", "bb1:1t.c", "", [ "$bb" ] ],
-    [ "pico:GP26", "pot1:SIG", "green", [ "v0" ] ],
-    [ "pico:GP27", "pot2:SIG", "green", [ "v0" ] ],
-    [ "pot2:VCC", "pico:3V3", "red", [ "v0" ] ],
-    [ "pot2:GND", "pico:GND.5", "black", [ "v0" ] ],
-    [ "pot1:VCC", "pico:3V3", "red", [ "v0" ] ],
-    [ "pot1:GND", "pico:GND.5", "black", [ "v0" ] ],
-    [ "led1:A", "pico:GP14", "green", [ "v0" ] ],
-    [ "led1:C", "pico:GND.5", "green", [ "v0" ] ],
-    [ "led2:A", "pico:GP15", "green", [ "v0" ] ],
-    [ "led2:C", "pico:GND.5", "green", [ "v0" ] ],
-    [ "led3:A", "pico:GP16", "green", [ "v0" ] ],
-    [ "led3:C", "pico:GND.5", "green", [ "v0" ] ],
-    [ "btn1:1.l", "pico:GP17", "green", [ "h0" ] ],
-    [ "btn1:2.r", "pico:GND.5", "green", [ "h0" ] ]
+    [ "pico:VBUS", "bb1:1t.c", "", [ "$bb" ] ]
   ],
   "dependencies": {}
 }
