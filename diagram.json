@@ -3,12 +3,12 @@
   "author": "Anonymous maker",
   "editor": "wokwi",
   "parts": [
-    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -3, "left": -112.4, "attrs": {} },
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 6.6, "left": 2.8, "attrs": {} },
     {
       "type": "wokwi-pi-pico",
       "id": "pico",
-      "top": 0.9,
-      "left": -38.65,
+      "top": 10.5,
+      "left": 76.55,
       "rotate": 270,
       "attrs": { "env": "micropython-20220618-v1.19.1" }
     },
@@ -23,9 +23,32 @@
       "top": 25.4,
       "left": 336,
       "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 185.54,
+      "left": 230.63,
+      "attrs": { "i2cAddress": "0x3c" }
     }
   ],
   "connections": [
+    [ "pico:GP26", "pot1:SIG", "green", [ "v0" ] ],
+    [ "pico:GP27", "pot2:SIG", "green", [ "v0" ] ],
+    [ "pot2:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot2:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "pot1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "pico:GND.5", "black", [ "v0" ] ],
+    [ "led1:A", "pico:GP14", "green", [ "v0" ] ],
+    [ "led1:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "led2:A", "pico:GP15", "green", [ "v0" ] ],
+    [ "led2:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "led3:A", "pico:GP16", "green", [ "v0" ] ],
+    [ "led3:C", "pico:GND.5", "green", [ "v0" ] ],
+    [ "btn1:1.l", "pico:GP17", "green", [ "h0" ] ],
+    [ "btn1:2.r", "pico:GND.5", "green", [ "h0" ] ],
+    [ "oled1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "oled1:GND", "pico:GND.4", "black", [ "v0" ] ],
     [ "pico:GP0", "bb1:1b.h", "", [ "$bb" ] ],
     [ "pico:GP1", "bb1:2b.h", "", [ "$bb" ] ],
     [ "pico:GND.1", "bb1:3b.h", "", [ "$bb" ] ],
@@ -66,20 +89,8 @@
     [ "pico:GND.8", "bb1:3t.c", "", [ "$bb" ] ],
     [ "pico:VSYS", "bb1:2t.c", "", [ "$bb" ] ],
     [ "pico:VBUS", "bb1:1t.c", "", [ "$bb" ] ],
-    [ "pico:GP26", "pot1:SIG", "green", [ "v0" ] ],
-    [ "pico:GP27", "pot2:SIG", "green", [ "v0" ] ],
-    [ "pot2:VCC", "pico:3V3", "red", [ "v0" ] ],
-    [ "pot2:GND", "pico:GND.5", "black", [ "v0" ] ],
-    [ "pot1:VCC", "pico:3V3", "red", [ "v0" ] ],
-    [ "pot1:GND", "pico:GND.5", "black", [ "v0" ] ],
-    [ "led1:A", "pico:GP14", "green", [ "v0" ] ],
-    [ "led1:C", "pico:GND.5", "green", [ "v0" ] ],
-    [ "led2:A", "pico:GP15", "green", [ "v0" ] ],
-    [ "led2:C", "pico:GND.5", "green", [ "v0" ] ],
-    [ "led3:A", "pico:GP16", "green", [ "v0" ] ],
-    [ "led3:C", "pico:GND.5", "green", [ "v0" ] ],
-    [ "btn1:1.l", "pico:GP17", "green", [ "h0" ] ],
-    [ "btn1:2.r", "pico:GND.5", "green", [ "h0" ] ]
+    [ "oled1:SCL", "pico:GP0", "green", [ "v0" ] ],
+    [ "pico:GP1", "oled1:SDA", "green", [ "v0" ] ]
   ],
   "dependencies": {}
 }
