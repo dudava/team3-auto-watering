@@ -1,6 +1,5 @@
 from machine import Pin, ADC, I2C
 import time
-
 # ========== НАСТРОЙКИ ==========
 PIN_ZONE1 = 14
 PIN_ZONE2 = 15
